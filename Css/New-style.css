@@ -1,0 +1,139 @@
+.calendar-container {
+    padding: 5px 5px 50px 5px;
+    background: #fff;
+}
+
+    .calendar-container * {
+        margin: 0;
+        padding: 0;
+    }
+
+.calendar-control {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.current-month {
+    font-family: 'Proxima Nova Bold';
+    padding: 0 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.calendar-control button {
+    font-family: 'Proxima Nova Regular';
+    font-size: 15px;
+    color: #adadad;
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+}
+
+.calendar-self {
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .calendar-self thead th {
+        width: 10%;
+        height: 56px;
+        background-color: #4c4c4c;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 18px;
+        font-family: 'Proxima Nova Bold';
+    }
+
+        .calendar-self thead th.weekend {
+            background-color: #5d5d5d;
+        }
+
+    .calendar-self tbody td {
+        height: 175px;
+        background-color: #f2f2f2;
+        vertical-align: top;
+        text-align: right;
+        padding: 2px 6px;
+        border: 2px solid #fff;
+        font-family: Gotham-Medium;
+        color: #4c4c4c;
+    }
+
+        .calendar-self tbody td a {
+            float: left;
+            margin: 10px;
+            color: silver;
+            font-weight: normal !important;
+        }
+
+        .calendar-self tbody td .agenda li {
+            font-weight: normal;
+            font-size: 8pt;
+            padding-bottom: 4px;
+            padding: 3px;
+            background-color: #fffbce;
+            margin: 2px;
+        }
+
+            .calendar-self tbody td .agenda li span {
+                font-weight: bold;
+                font-size: 10pt;
+            }
+
+            .calendar-self tbody td .agenda li:hover {
+                background-color: #98DE96;
+                cursor: pointer;
+            }
+
+        .calendar-self tbody td:hover {
+            background-color: #F8F8F8;
+        }
+
+        .calendar-self tbody td.old {
+            color: #CECECE;
+            font-weight: normal;
+        }
+
+        .calendar-self tbody td.weekend {
+            background-color: #f3e5e5;
+        }
+
+            .calendar-self tbody td.weekend:hover {
+                background-color: #F9F0F0;
+            }
+
+        .calendar-self tbody td.today {
+            background-color: #cef9cd;
+        }
+
+            .calendar-self tbody td.today:hover {
+                background-color: #DAFBD9;
+            }
+
+        .calendar-self tbody td ul {
+            list-style: none;
+        }
+
+        .calendar-self tbody td li {
+            font-size: 12px;
+            color: #4c4c4c;
+            font-family: Gotham-Medium;
+            text-align: left;
+        }
+
+.searchControl {
+    float: right;
+    margin-bottom: 15px;
+}
+
+.EventDetail tbody td {
+    padding: 10px;
+    margin: 1px;
+}
+
+    .EventDetail tbody td:first-child {
+        width: 250px;
+    }

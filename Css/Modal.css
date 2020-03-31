@@ -1,0 +1,120 @@
+.success-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    text-align: center;
+    background-color: rgba(10,10,10,.68);
+    display: none
+}
+
+.success-modal-inner {
+    min-height: 200px;
+    max-width: 840px;
+    margin: 35px auto;
+    border-radius: 12px;
+    overflow: hidden
+}
+
+    .success-modal-inner .success-icon {
+        padding: 60px 0;
+        background-color: #34e6ae
+    }
+
+    .success-modal-inner .success-message {
+        padding: 35px 0;
+        background-color: #fff
+    }
+
+        .success-modal-inner .success-message h4 {
+            color: #646464;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 32px
+        }
+
+        .success-modal-inner .success-message p {
+            color: #646464;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 32px
+        }
+
+        .success-modal-inner .success-message .close-modal {
+            color: #888070;
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+
+        .success-modal-inner .success-message .save-modal {
+            color: #5d9c6b;
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 50px;
+        }
+
+.alert-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    text-align: center;
+    background-color: rgba(10,10,10,.68);
+    display: none
+}
+
+.alert-modal-inner {
+    min-height: 200px;
+    max-width: 840px;
+    margin: 100px auto;
+    border-radius: 12px;
+    overflow: hidden
+}
+
+    .alert-modal-inner .alert-icon {
+        padding: 25px 0;
+        background-color: #e0455e
+    }
+
+        .alert-modal-inner .alert-icon img {
+            width: 100px
+        }
+
+    .alert-modal-inner .alert-message {
+        padding: 35px 0;
+        background-color: #fff
+    }
+
+        .alert-modal-inner .alert-message h4 {
+            color: #646464;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 32px
+        }
+
+        .alert-modal-inner .alert-message p {
+            color: #646464;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 32px
+        }
+
+        .alert-modal-inner .alert-message .close-modal {
+            color: #e0455e;
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 50px;
+            display: block
+        }

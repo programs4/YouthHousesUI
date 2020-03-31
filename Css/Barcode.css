@@ -1,0 +1,8 @@
+﻿/*  Code39Azalea Copyright 2012 Jerry Whiting (CC BY-ND 3.0) azalea.com/web-fonts/  */
+@font-face
+{
+    font-family: Barcode;
+    src: url('/Fonts/Barcode/Code39Azalea.eot') format('embedded-opentype'),url('/Fonts/Barcode/Code39Azalea.woff') format('woff'),url('/Fonts/Barcode/Code39Azalea.ttf') format('truetype'),url('/Fonts/Barcode/Code39Azalea.svg#Code39Azalea') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

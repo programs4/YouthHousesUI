@@ -1,0 +1,74 @@
+.content table {
+    width: 100%;
+    margin: 10px auto;
+}
+
+    .content table td {
+        padding: 0px 10px;
+    }
+
+.footer .sign {
+    margin-top: 40px;
+    line-height: 5px;
+}
+
+    .footer .sign p {
+        font-size: 10pt;
+        text-align: center;
+    }
+
+.footer .personal {
+    margin-top: 40px;
+}
+
+.header p {
+    text-align: center;
+}
+
+.header .company {
+    font-size: 16pt;
+    margin-bottom: 0px;
+}
+
+.header .doc-name {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.header .doc-number {
+    font-size: 12pt;
+}
+
+.footer {
+    margin-top: 30px;
+}
+
+.underline-input em {
+    width: 100%;
+    display: block;
+}
+
+.underline-input span {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding-bottom: 7px;
+    text-align: center;
+}
+
+.padding-left-70 {
+    padding-left: 70px;
+}
+
+.table-head-colored tr:first-child td {
+    background-color: rgb(242,242,242);
+}
+
+
+@media print {
+    .table-head-colored tr:first-child td {
+        background-color: rgb(242,242,242);
+        -webkit-print-color-adjust: exact;
+    }
+}

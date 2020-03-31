@@ -1,0 +1,248 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Import Namespace="YouthHousesLibrary" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>YouthHouses UI</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/customscroll.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/css/chosen.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-multiselect.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="/js/jquery.bootpag.js"></script>
+
+    <%="<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/styles.css\" />"%>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="AspnetForm" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Panel ID="pnlMain" runat="server" CssClass="mainSection printNoDisplay" Style="display: none">
+            <div class="navHidden">
+                <div class="navLogo">
+                    <img src="/images/logo.png" onclick="location.href='/<%=Langs.Name %>/modules'" />
+                </div>
+
+                <ul class="firstLevelUl">
+                    <li id="li_1">
+                        <div class="firstLevelLiHolder">
+                            <img src="/images/groups/10.png" class="mCS_img_loaded" />
+                            <span class="leftMenuName">MODULLAR</span>
+                        </div>
+                        <ul class="innerUl">
+
+                            <asp:Literal ID="LtrLeftMenu" runat="server"></asp:Literal>
+
+                        </ul>
+                    </li>
+
+                    <li onclick="location.href='/exit';">
+                        <div class="firstLevelLiHolder">
+                            <img src="/images/groups/Exit.png" class="mCS_img_loaded" />
+                            <span class="leftMenuName">Çıxış</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="hr"></div>
+            </div>
+            <div class="contentHead">
+                <div class="menuButton vMiddle floatLeft">
+                    <img src="/images/menu.png" />
+                </div>
+                <div class="contentName floatLeft vMiddle">
+                    <div class="row">
+                        <div class="inline-flex">
+                            <h3>
+                                <asp:Literal ID="LtrTitle" runat="server">
+                                </asp:Literal>
+                            </h3>
+                            <div class="lang-bar">
+                                <asp:Repeater ID="RptLangs" runat="server">
+                                    <ItemTemplate>
+                                        <a href='/<%#Eval("Name").LangsURL(Request.Url.AbsolutePath)%>' class='<%# (Eval("Name").ToString().ToLower()==Langs.Name)?"active":"" %>'>
+                                            <img src='/images/langs/<%# Eval("Name")%>-lang.png' />
+                                            <%#Eval("Name").ToString().ToUpper()%>
+                                        </a>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentUser">
+                    <div class="vMiddle">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>
+                                    <asp:Literal ID="ltrOperatorName" runat="server">Fullname</asp:Literal>
+                                    <br />
+                                </h4>
+                                <a href="/exit">
+                                    <img src="/images/exit.png" />
+                                    Təhlükəsiz çıxış </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="PnlContent" runat="server" CssClass="content">
+            <div class="contentBody">
+                <div class="contentInner" id="egovBox">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </asp:Panel>
+
+        <script type="text/javascript" src="/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/js/customscroll.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap-tagsinput.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".form_datetime").datetimepicker(
+                    {
+                        format: "dd.mm.yyyy hh:ii",
+                        language: 'en',
+                        use24hours: true,
+                        todayBtn: 1,
+                        //weekStart: 1,                        
+                        autoclose: 1,
+                        //todayHighlight: 1,
+                        //startView: 2,
+                        //minView: 2,
+                        //forceParse: 0,
+
+                    });
+
+                $(".form_date").datetimepicker(
+                    {
+                        format: "dd.mm.yyyy",
+                        language: 'en',
+                        todayBtn: 1,
+                        weekStart: 1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 2,
+                        minView: 2,
+                        forceParse: 0,
+
+                    });
+            });
+
+            $(window).resize(function () {
+                var menuWidth2 = $(".navHidden").width();
+                var widthMmenu2 = $(window).width() - menuWidth2;
+                $(".contentHead").animate({ width: widthMmenu2, left: menuWidth2 + "px" }, 1);
+                $(".content").animate({ width: widthMmenu2, marginLeft2: menuWidth2 + "px" }, 1);
+                // console.log(widthMmenu2);
+            });
+            (function ($) {
+                $(window).on("load", function () {
+                    $(".navHidden").mCustomScrollbar();
+                    var active = $(".innerUl .active");
+                    var offset = active.offset();
+
+                    if (offset == null)
+                        return;
+
+                    $(".mCSB_container").css('top', offset.top - 100 + 'px');
+                });
+            })(jQuery);
+            $(".innerUl li").click(function () {
+                //console.log(true);
+                $(".inneractivetext").removeClass("inneractivetext");
+                $(this).addClass("inneractivetext");
+            })
+            function openMenu(speed, callback) {
+                var menuWidth = 280;
+                var widthMmenu = $(document).width() - 280;
+                $(".navLogo img").attr("src", "/images/logo.png");
+                $(".navHidden").animate({ width: menuWidth + "px" }, speed);
+                $(".contentHead").animate({ width: widthMmenu, left: menuWidth + "px" }, speed);
+                $(".content").animate({ width: widthMmenu, marginLeft: menuWidth + "px" }, speed);
+                $(".navHidden li img").animate({ margin: "0px" });
+                $(".navHidden li svg").animate({ margin: "0px" });
+                $(".navHidden .firstLevelLiHolder").animate({ marginLeft: "25px" });
+                $(".navHidden li span").fadeIn(800);
+                $(".Area li").animate({ marginLeft: "25px" });
+                $(".innerUl").slideDown();
+                $(".copyright").show();
+                menuopen = true;
+            }
+            function closeMenu(speed) {
+                var menuWidth = 113;
+                var widthMmenu = $(document).width() - 113;
+                $(".innerUl").slideUp(50);
+                $(".activetext").removeClass("activetext");
+                $(".navLogo img").attr("src", "/images/minilogo.png");
+                $(".navHidden").animate({ width: menuWidth + "px" }, speed);
+                $(".contentHead").animate({ width: widthMmenu + "px", left: menuWidth + "px" }, speed);
+                $(".content").animate({ width: widthMmenu + "px", marginLeft: menuWidth + "px" }, speed);
+                $(".navHidden li img").css({ "margin": "0 auto" });
+                $(".navHidden li svg").css({ "margin": "0 auto" });
+                $(".navHidden .firstLevelLiHolder").animate({ marginLeft: "0px" });
+                $(".navHidden li span").hide();
+                $(".Area li").animate({ marginLeft: "47px" }, 200);
+                $(".copyright").hide();
+                menuopen = false;
+            }
+            var speed = 100;
+            var menuopen = true;
+            $(".menuButton").click(function () {
+
+                if (menuopen) {
+                    closeMenu(speed);
+                } else {
+                    openMenu(speed);
+                }
+            });
+            $(".firstLevelLiHolder").click(function () {
+                if (!menuopen) {
+                    openMenu(speed);
+                }
+            });
+            $(".userArea").click(function () {
+                if (!menuopen) {
+                    openMenu();
+                }
+            })
+        </script>
+
+        <script>
+         
+
+            $(function () {
+                $('.multiSelect').multiselect({
+                    buttonWidth: '100%',
+                });
+            });
+
+            $(function () {
+                $('.multiSelectAll').multiselect({
+                    buttonWidth: '100%',
+                    includeSelectAllOption: true,
+                });
+            });
+
+        </script>
+
+    </form>
+</body>
+</html>
